@@ -1,7 +1,7 @@
 ﻿///////////////////////////////////////////////
 ////// Carolanne Legault //////////////////////
 ///////////////////////////////////////////////
-////// Dernière modification: 2018-11-28 //////
+////// Dernière modification: 2018-11-09 //////
 ///////////////////////////////////////////////
 
 using System.Collections;
@@ -13,7 +13,6 @@ public class CompteurEnnemis : MonoBehaviour {
 
     public int nbEnnemis = 0; // Le nombre d'ennemis au départ
     private Text txtCompteur; // Montrer combien d'ennemis il reste
-    private GameObject[] EnnTab; // Tableau permettant de calculer le nombre d'ennemis
     public GameObject GenerateurEnnemis; // Permet d'accéder au script lui étant relié pouvant ainsi utilisre les variable déclarées dans ce script
     
     void Start () {
