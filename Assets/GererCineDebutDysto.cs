@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GererCineDebutDysto : MonoBehaviour {
     public GameObject Camera1;
@@ -52,5 +53,7 @@ public class GererCineDebutDysto : MonoBehaviour {
 		animal.SetActive(false);
 		EnnemiEtAnimal.SetActive(true);
 		GroupeEnnemis.SetActive(true);
+		yield return new WaitForSeconds(7);
+		SceneManager.LoadScene("SceneDystopia");
     }
 }
