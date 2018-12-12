@@ -7,13 +7,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GestionPerso : MonoBehaviour
 {
 
     //Variables pour la vie totale et vie actuelle du personnage
     public float vieTotale;
-    private float vieActuelle;
+    public float vieActuelle;
 
     //Vitesse de tir du personnage
     public float vitesseTir;
@@ -39,6 +40,13 @@ public class GestionPerso : MonoBehaviour
         //Initializations
         vieActuelle = vieTotale;
         anim = GetComponent<Animator>();
+
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        if (currentScene.name == "SceneDystopia")
+        {
+            peutTirer = true;
+        }
     }
 	
 	// Update is called once per frame
