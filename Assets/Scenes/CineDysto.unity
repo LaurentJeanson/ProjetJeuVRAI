@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5631,8 +5631,7 @@ GameObject:
   m_PrefabInternal: {fileID: 290124530}
 --- !u!4 &290124532 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4847423181465722, guid: 686a91832ee1bb840bbfaa1b4faf697a,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 290124530}
 --- !u!1 &290531686
 GameObject:
@@ -15580,6 +15579,16 @@ Prefab:
     - target: {fileID: 4101577774044302, guid: b9fa87e814a83d141adb88cf7c5450ac, type: 2}
       propertyPath: m_LocalScale.z
       value: 13.333271
+      objectReference: {fileID: 0}
+    - target: {fileID: 114388117533537376, guid: b9fa87e814a83d141adb88cf7c5450ac,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114164558223631068, guid: b9fa87e814a83d141adb88cf7c5450ac,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9fa87e814a83d141adb88cf7c5450ac, type: 2}
