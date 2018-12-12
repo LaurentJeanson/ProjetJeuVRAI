@@ -39,6 +39,7 @@ public class EnnemiRange : MonoBehaviour
         navAgent = GetComponent<NavMeshAgent>();
         ennemiAnim = GetComponent<Animator>();
         vie = InitializeVie();
+        Physics.IgnoreLayerCollision(12, 12);
     }
 
     void Update()
@@ -46,15 +47,15 @@ public class EnnemiRange : MonoBehaviour
         //On dit à l'ennemi de se diriger vers le personnage à une certaine vitesse
         navAgent.SetDestination(laCible.transform.position);
 
-        if (navAgent.remainingDistance <= 30 && peutTirer == true)
+        if (navAgent.remainingDistance <= 30 && navAgent.remainingDistance > 0 && peutTirer == true)
         {
+            print("POW");
             peutTirer = false;
-            Invoke("TirEnnemi", 0);
+            StartCoroutine("TirEnnemi");
         }
     }
 
     //Si l'ennemi est touché par une balle de fusil, on le détruit
-    /***À TRAVAILLER SI ON VEUT QUE L'ENNEMI AILLE DE LA VIE***/
     public void Touche()
     {
         vie--;
@@ -74,10 +75,12 @@ public class EnnemiRange : MonoBehaviour
 
     IEnumerator TirEnnemi()
     {
+        print("POW2");
         var clone = Instantiate(ParticuleEnnemi);
         clone.transform.position = ParticuleEnnemi.transform.position;
         clone.transform.localEulerAngles = transform.localEulerAngles;
         clone.SetActive(true);
+        clone.GetComponent<ParticleSystem>().Play();
 
         yield return new WaitForSeconds(2);
         peutTirer = true;
