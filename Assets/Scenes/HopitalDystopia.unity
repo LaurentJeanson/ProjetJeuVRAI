@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8634,6 +8634,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b682ee111ae6d144396bae0c63d20ae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Texte: {fileID: 34597649}
+  Panel: {fileID: 572556076}
+  Texte2: {fileID: 2010329885}
+  Panel2: {fileID: 1104993847}
 --- !u!4 &1097288749
 Transform:
   m_ObjectHideFlags: 0
@@ -9932,6 +9936,10 @@ Prefab:
     - target: {fileID: 417070, guid: 38075ff1c3cff91428ade499a59bdc97, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 80.578
+      objectReference: {fileID: 0}
+    - target: {fileID: 117070, guid: 38075ff1c3cff91428ade499a59bdc97, type: 2}
+      propertyPath: m_TagString
+      value: Arme
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38075ff1c3cff91428ade499a59bdc97, type: 2}

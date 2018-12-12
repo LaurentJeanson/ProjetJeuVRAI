@@ -28,7 +28,7 @@ public class GestionPerso : MonoBehaviour
     public GameObject fusil;
 
     //Booléennes pour déterminer si le personnage peut tirer et si l'ennemi est proche
-    public static bool peutTirer = true;
+    public static bool peutTirer = false;
     private bool estDansZone;
 
     //Animator du personnage
@@ -82,6 +82,11 @@ public class GestionPerso : MonoBehaviour
             //Le faire attaquer à une intervalle fixe
             InvokeRepeating("AttaquePerso", 0, Ennemis.vitesseAttaque);
         }
+        // Si le joueur touche l'arme, il peut tirer
+        if (other.gameObject.tag == "Arme")
+        {
+            peutTirer = true;
+        }
     }
 
     //Si l'ennemi s'éloigne du personnage
@@ -133,4 +138,5 @@ public class GestionPerso : MonoBehaviour
     {
         CancelInvoke("AttaquePerso");
     }
+    
 }
