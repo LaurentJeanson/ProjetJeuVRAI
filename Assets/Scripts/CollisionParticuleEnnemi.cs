@@ -39,26 +39,17 @@ public class CollisionParticuleEnnemi : MonoBehaviour {
             i++;
         }
 
-        //Instantier une particule de contact à l'endroit de la collision et l'activer
+        if (other.tag == "Player")
+        {
+            other.gameObject.GetComponent<GestionPerso>().vieActuelle -= 0.1f;
+        }
+
+        print("TOUCHE");
         var clone = Instantiate(particuleHit);
         clone.transform.position = pos;
         clone.SetActive(true);
 
         //Détruire la particule de la balle
         Destroy(gameObject);
-
-        //Si l'objet touché était un ennemi, le détruire aussi et arrêter son attaque
-        if (other.gameObject.tag == "ennemi")
-        {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            player.GetComponent<GestionPerso>().StopInvoke();
-            other.gameObject.GetComponent<Ennemis>().Touche();
-        }
-        else if (other.gameObject.tag == "ennemiRange")
-        {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            player.GetComponent<GestionPerso>().StopInvoke();
-            other.gameObject.GetComponent<EnnemiRange>().Touche();
-        }
     }
 }
