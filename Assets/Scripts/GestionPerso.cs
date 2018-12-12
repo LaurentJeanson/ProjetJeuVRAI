@@ -7,6 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GestionPerso : MonoBehaviour
 {
@@ -39,6 +40,13 @@ public class GestionPerso : MonoBehaviour
         //Initializations
         vieActuelle = vieTotale;
         anim = GetComponent<Animator>();
+
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        if (currentScene.name == "SceneDystopia")
+        {
+            peutTirer = true;
+        }
     }
 	
 	// Update is called once per frame
