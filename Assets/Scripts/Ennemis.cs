@@ -41,6 +41,10 @@ public class Ennemis : MonoBehaviour
 
 	void Update ()
     {
+        if (touchePerso == true)
+        {
+            ennemiAnim.SetTrigger("Attaque");
+        }
         //On dit à l'ennemi de se diriger vers le personnage à une certaine vitesse
         navAgent.SetDestination(laCible.transform.position);
         ennemiAnim.SetFloat("vitesse", navAgent.velocity.magnitude);
