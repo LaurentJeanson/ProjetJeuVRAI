@@ -5775,7 +5775,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &427379716
 Transform:
   m_ObjectHideFlags: 0
@@ -8414,12 +8414,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 2d64acbbbd2eefb488f1ff9ad5fb30b4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 2d64acbbbd2eefb488f1ff9ad5fb30b4, type: 3}
       propertyPath: m_TagString
       value: ennemi
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 2d64acbbbd2eefb488f1ff9ad5fb30b4, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 69f261ae1cabaa244a0c28f5aabaf344, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d64acbbbd2eefb488f1ff9ad5fb30b4, type: 3}
   m_IsPrefabAsset: 0
@@ -10651,12 +10655,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 69423100bb11ac949bcc281cbf816714, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 69423100bb11ac949bcc281cbf816714, type: 3}
       propertyPath: m_TagString
       value: ennemi
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 69423100bb11ac949bcc281cbf816714, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 69f261ae1cabaa244a0c28f5aabaf344, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69423100bb11ac949bcc281cbf816714, type: 3}
   m_IsPrefabAsset: 0
@@ -11036,12 +11044,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: ac83779c9ba57de4bbf87cf295ea05a4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: ac83779c9ba57de4bbf87cf295ea05a4, type: 3}
       propertyPath: m_TagString
       value: ennemi
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: ac83779c9ba57de4bbf87cf295ea05a4, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 69f261ae1cabaa244a0c28f5aabaf344, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac83779c9ba57de4bbf87cf295ea05a4, type: 3}
   m_IsPrefabAsset: 0
@@ -18181,7 +18193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1206772928
 Transform:
   m_ObjectHideFlags: 0
@@ -19136,7 +19148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1282725926
 Transform:
   m_ObjectHideFlags: 0
@@ -21654,12 +21666,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: cabd9e26b6bab144dad26ad36e1c9ec9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: cabd9e26b6bab144dad26ad36e1c9ec9, type: 3}
       propertyPath: m_TagString
       value: ennemi
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: cabd9e26b6bab144dad26ad36e1c9ec9, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 69f261ae1cabaa244a0c28f5aabaf344, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cabd9e26b6bab144dad26ad36e1c9ec9, type: 3}
   m_IsPrefabAsset: 0
@@ -24259,7 +24275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1649942955
 Transform:
   m_ObjectHideFlags: 0
@@ -27642,7 +27658,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1883469314
 Transform:
   m_ObjectHideFlags: 0
@@ -31767,12 +31783,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: ce259ac552b1b154892112afa1dec583, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: ce259ac552b1b154892112afa1dec583, type: 3}
       propertyPath: m_TagString
       value: ennemi
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: ce259ac552b1b154892112afa1dec583, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 69f261ae1cabaa244a0c28f5aabaf344, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce259ac552b1b154892112afa1dec583, type: 3}
   m_IsPrefabAsset: 0
