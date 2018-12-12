@@ -7,7 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollisionParticule : MonoBehaviour {
+public class CollisionParticuleEnnemi : MonoBehaviour {
 
     //Particule de touche d'une balle
     public GameObject particuleHit;

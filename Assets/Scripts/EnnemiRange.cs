@@ -39,7 +39,6 @@ public class EnnemiRange : MonoBehaviour
         navAgent = GetComponent<NavMeshAgent>();
         ennemiAnim = GetComponent<Animator>();
         vie = InitializeVie();
-        Physics.IgnoreLayerCollision(12, 12);
     }
 
     void Update()

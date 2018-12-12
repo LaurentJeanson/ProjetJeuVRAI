@@ -53,6 +53,7 @@ public class GestionPerso : MonoBehaviour
             //Si le joueur clique et le personnage peut tirer
             if (Input.GetMouseButtonDown(0) && peutTirer)
             {
+                print("TIR");
                 //Instantier une particule positionnée au fusil et tournée au même angle que le personnage
                 var clone = Instantiate(particuleTir);
                 clone.transform.position = fusil.transform.position;
