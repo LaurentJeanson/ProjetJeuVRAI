@@ -4,7 +4,7 @@ using UnityEngine;
 
 // Scripte créé par Laurent Jeanson
 
-public class GestionArmeEvenrt : MonoBehaviour {
+public class GestionArmeEvent : MonoBehaviour {
     public GameObject Texte;
     public GameObject Panel;
     public GameObject Texte2;
@@ -18,7 +18,7 @@ public class GestionArmeEvenrt : MonoBehaviour {
 	// Lorsque le joueur appuie sur ENTER, les textes du tutoriel se désactive
 	// et d'autre textes apparaient pour montrer un autre tutoriel sur la gestion de vie
 	void Update () {
-        if (Input.GetKey(KeyCode.Return))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
             Texte.SetActive(false);
             Panel.SetActive(false);
