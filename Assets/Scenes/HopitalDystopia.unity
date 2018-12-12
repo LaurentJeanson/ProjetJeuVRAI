@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -215,6 +215,11 @@ BoxCollider:
 --- !u!1 &28572129 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1583642501159784, guid: b9fa87e814a83d141adb88cf7c5450ac,
+    type: 2}
+  m_PrefabInternal: {fileID: 621838685}
+--- !u!4 &28572130 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4101577774044302, guid: b9fa87e814a83d141adb88cf7c5450ac,
     type: 2}
   m_PrefabInternal: {fileID: 621838685}
 --- !u!1 &31587636 stripped
@@ -1100,7 +1105,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &546246744 stripped
 GameObject:
@@ -2345,6 +2350,11 @@ Prefab:
       propertyPath: particuleHit
       value: 
       objectReference: {fileID: 977836160}
+    - target: {fileID: 135629394341668198, guid: b9fa87e814a83d141adb88cf7c5450ac,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9fa87e814a83d141adb88cf7c5450ac, type: 2}
   m_IsPrefabAsset: 0
@@ -8616,6 +8626,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1097288749}
   - component: {fileID: 1097288748}
+  - component: {fileID: 1097288750}
   m_Layer: 0
   m_Name: GestionArme
   m_TagString: Untagged
@@ -8638,19 +8649,32 @@ MonoBehaviour:
   Panel: {fileID: 572556076}
   Texte2: {fileID: 2010329885}
   Panel2: {fileID: 1104993847}
+  peutTirer: 0
 --- !u!4 &1097288749
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1097288747}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 651.6847, y: 103.70696, z: 590.7711}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: -0.00026208593}
+  m_LocalPosition: {x: 0.107, y: 0.089, z: 0.086}
+  m_LocalScale: {x: 0.07500042, y: 0.0750004, z: 0.07500042}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_Father: {fileID: 28572130}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1097288750
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1097288747}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.896698
+  m_Center: {x: 1.396698, y: 0, z: 0}
 --- !u!1 &1104993847
 GameObject:
   m_ObjectHideFlags: 0
@@ -9941,6 +9965,10 @@ Prefab:
       propertyPath: m_TagString
       value: Arme
       objectReference: {fileID: 0}
+    - target: {fileID: 160878, guid: 38075ff1c3cff91428ade499a59bdc97, type: 2}
+      propertyPath: m_TagString
+      value: Arme
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38075ff1c3cff91428ade499a59bdc97, type: 2}
   m_IsPrefabAsset: 0
@@ -10713,7 +10741,7 @@ Transform:
   m_LocalScale: {x: 5.0658, y: 11.132602, z: 7.785122}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2010329885
 GameObject:

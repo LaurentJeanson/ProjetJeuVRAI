@@ -28,7 +28,7 @@ public class GestionPerso : MonoBehaviour
     public GameObject fusil;
 
     //Booléennes pour déterminer si le personnage peut tirer et si l'ennemi est proche
-    public static bool peutTirer = false;
+    public bool peutTirer = false;
     private bool estDansZone;
 
     //Animator du personnage
