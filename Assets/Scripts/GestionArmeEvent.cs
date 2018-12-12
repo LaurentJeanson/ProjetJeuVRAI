@@ -39,8 +39,8 @@ public class GestionArmeEvent : MonoBehaviour {
         print(Time.time);
         yield return new WaitForSeconds(10);
         print(Time.time);
-        Texte2.SetActive(false);
-        Panel2.SetActive(false);
+        Destroy(Texte2);
+        Destroy(Panel2);
     }
 
     public void OnTriggerEnter(Collider other)
