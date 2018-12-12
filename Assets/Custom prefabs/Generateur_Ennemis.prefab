@@ -9,17 +9,17 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1827255541795920}
+  m_RootGameObject: {fileID: 1214665348500986}
   m_IsPrefabAsset: 1
---- !u!1 &1827255541795920
+--- !u!1 &1214665348500986
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4847423181465722}
-  - component: {fileID: 114949355707179574}
+  - component: {fileID: 4589463770195532}
+  - component: {fileID: 114077463582620248}
   m_Layer: 0
   m_Name: Generateur_Ennemis
   m_TagString: Untagged
@@ -27,12 +27,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4847423181465722
+--- !u!4 &4589463770195532
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1827255541795920}
+  m_GameObject: {fileID: 1214665348500986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 300.02, y: 22.14, z: 271.7291}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,12 +40,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114949355707179574
+--- !u!114 &114077463582620248
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1827255541795920}
+  m_GameObject: {fileID: 1214665348500986}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c795008d26590a4fa9b3ecbeb74c9b3, type: 3}
@@ -56,4 +56,16 @@ MonoBehaviour:
   EnnemiMauve: {fileID: 0}
   EnnemiOrange: {fileID: 0}
   EnnemiRouge: {fileID: 0}
-  EnnemiVert: {fileID: 0}
+  ChampiBleu: {fileID: 0}
+  ChampiRouge: {fileID: 0}
+  ChampiVert: {fileID: 0}
+  spawn1: {fileID: 0}
+  spawn2: {fileID: 0}
+  spawn3: {fileID: 0}
+  spawn4: {fileID: 0}
+  spawn5: {fileID: 0}
+  spawn6: {fileID: 0}
+  nbEnnemisMax: 10
+  spawnRate: 1
+  nbEnnemisTotal: 0
+  iNbEnnemisMorts: 0
