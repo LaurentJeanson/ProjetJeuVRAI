@@ -9,6 +9,7 @@ public class GestionArmeEvent : MonoBehaviour {
     public GameObject Panel;
     public GameObject Texte2;
     public GameObject Panel2;
+    public bool peutTirer = false;
     // Use this for initialization
     void Start () {
 		
@@ -18,13 +19,16 @@ public class GestionArmeEvent : MonoBehaviour {
 	// Lorsque le joueur appuie sur ENTER, les textes du tutoriel se désactive
 	// et d'autre textes apparaient pour montrer un autre tutoriel sur la gestion de vie
 	void Update () {
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (peutTirer == true)
         {
-            Texte.SetActive(false);
-            Panel.SetActive(false);
-            Texte2.SetActive(true);
-            Panel2.SetActive(true);
-            StartCoroutine(Cerveautexte());
+            if (Input.GetKey(KeyCode.Mouse0))
+            {       
+                Texte.SetActive(false);
+                Panel.SetActive(false);
+                Texte2.SetActive(true);
+                Panel2.SetActive(true);
+                StartCoroutine(Cerveautexte());
+            }
         }
     }
 
@@ -37,5 +41,15 @@ public class GestionArmeEvent : MonoBehaviour {
         print(Time.time);
         Texte2.SetActive(false);
         Panel2.SetActive(false);
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        print(other.gameObject.name);
+        if (other.gameObject.tag == "Arme")
+        {
+           
+            peutTirer = true;       
+        }
     }
 }
