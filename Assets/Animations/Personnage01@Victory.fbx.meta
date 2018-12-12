@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: da2aa9cab4966ae469d5d9ea9035f573
+guid: 19928e553c773fc4181ac684b62dda4c
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -55,7 +55,7 @@ ModelImporter:
     400046: mixamorig:Spine1
     400048: mixamorig:Spine2
     400050: //RootNode
-    7400000: Walking
+    7400000: Victory
     9500000: //RootNode
     11100000: //RootNode
   externalObjects: {}
@@ -87,18 +87,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Walking
+      name: Victory
       takeName: mixamo.com
       firstFrame: 0
-      lastFrame: 26
+      lastFrame: 209
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 1
       hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
+      loopTime: 0
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
