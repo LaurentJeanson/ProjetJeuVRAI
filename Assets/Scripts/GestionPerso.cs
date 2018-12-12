@@ -13,7 +13,7 @@ public class GestionPerso : MonoBehaviour
 
     //Variables pour la vie totale et vie actuelle du personnage
     public float vieTotale;
-    private float vieActuelle;
+    public float vieActuelle;
 
     //Vitesse de tir du personnage
     public float vitesseTir;
