@@ -16,10 +16,12 @@ public class Ennemis : MonoBehaviour
     //Cible à suivre
     public GameObject laCible;
 
-    public GameObject GenerateurEnnemis;
+    public static GameObject GenerateurEnnemis;
 
     public static int vieEnnemi;
-    public int vie;
+    public float vie;
+
+    public GameObject UIStatistique;
 
     //NavMesh et Animator de l'ennemi
     NavMeshAgent navAgent;
@@ -30,9 +32,10 @@ public class Ennemis : MonoBehaviour
     public static float degatEnnemi = 0.1f;
     public static float vitesseAttaque = 2;
 
+
 	void Start ()
     {
-        print(vie);
+        GenerateurEnnemis = GameObject.Find("Generateur_Ennemis");
         //Initialization
         navAgent = GetComponent<NavMeshAgent>();
         ennemiAnim = GetComponent<Animator>();
@@ -47,7 +50,6 @@ public class Ennemis : MonoBehaviour
         }
         //On dit à l'ennemi de se diriger vers le personnage à une certaine vitesse
         navAgent.SetDestination(laCible.transform.position);
-        ennemiAnim.SetFloat("vitesse", navAgent.velocity.magnitude);
 
         //Animation de l'ennemi s'il touche le personnage
         /***NON FONCTIONNEL***/
@@ -58,7 +60,7 @@ public class Ennemis : MonoBehaviour
     /***À TRAVAILLER SI ON VEUT QUE L'ENEMI AILLE DE LA VIE***/
     public void Touche()
     {
-        vie--;
+        vie -= laCible.GetComponent<GestionPerso>().degats;
 
         if (vie <= 0)
         {
@@ -70,11 +72,11 @@ public class Ennemis : MonoBehaviour
         {
             GenerationEnnemis.iNoVague++;
 
-            StartCoroutine("AllerProchaineVague");
+            UIStatistique.SetActive(true);
         }
     }
 
-    void AllerProchaineVague()
+    public static void AllerProchaineVague()
     {
         switch (GenerationEnnemis.iNoVague)
         {
