@@ -76,7 +76,7 @@ public class EnnemiRange : MonoBehaviour
     {
         print("POW2");
         var clone = Instantiate(ParticuleEnnemi);
-        clone.transform.position = ParticuleEnnemi.transform.position;
+        clone.transform.position = ParticuleEnnemi.transform.position + (ParticuleEnnemi.transform.forward * 2);
         clone.transform.localEulerAngles = transform.localEulerAngles;
         clone.SetActive(true);
         clone.GetComponent<ParticleSystem>().Play();

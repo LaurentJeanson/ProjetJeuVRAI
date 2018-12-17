@@ -177,12 +177,14 @@ public class GenerationEnnemis : MonoBehaviour
         }
     }
 
-    public void ProchaineVague(int nbEnnemisACreer, int vieEnnemisProche, int vieEnnemisRange)
+    public void ProchaineVague(int nbEnnemisACreer, int vieEnnemisProche, int vieEnnemisRange, float degatEnnemis, float degatEnnemisRange)
     {
         nbEnnemisTotal = 0;
         nbEnnemisMax = nbEnnemisACreer;
         SetVieEnnemiProche(vieEnnemisProche);
+        SetDegatEnnemiProche(degatEnnemis);
         SetVieEnnemiRange(vieEnnemisRange);
+        SetDegatEnnemiRange(degatEnnemisRange);
         InvokeRepeating("CreationEnnemiSpawn", 1, spawnRate);
     }
 
@@ -191,8 +193,18 @@ public class GenerationEnnemis : MonoBehaviour
         Ennemis.vieEnnemi = vie;
     }
 
+    public static void SetDegatEnnemiProche(float degats)
+    {
+        Ennemis.degatEnnemi = degats;
+    }
+
     public static void SetVieEnnemiRange(int vie)
     {
         EnnemiRange.vieEnnemi = vie;
+    }
+
+    public static void SetDegatEnnemiRange(float degats)
+    {
+        EnnemiRange.degatEnnemi = degats;
     }
 }
