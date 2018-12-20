@@ -13,7 +13,8 @@ public class DeplacementPerso : MonoBehaviour
     //Rigidbody et Animator du personnage
     private Rigidbody rb;
     private Animator anim;
-
+	public GameObject Marche;
+	public GameObject CoursSon;
     //Déterminer si le personnage court
     private bool court = false;
 
@@ -71,13 +72,20 @@ public class DeplacementPerso : MonoBehaviour
                 //Animation de course
                 anim.SetBool("Marche", false);
                 anim.SetBool("Court", true);
+				Marche.SetActive (false);
+				CoursSon.SetActive (true);
             }
             //Sinon, animation 'idle'
             else
             {
                 anim.SetBool("Marche", false);
                 anim.SetBool("Court", false);
+				Marche.SetActive (false);
+				CoursSon.SetActive (false);
             }
+			if (Input.GetKeyDown (KeyCode.A) || Input.GetKeyDown (KeyCode.S) || Input.GetKeyDown (KeyCode.D) || Input.GetKeyDown (KeyCode.W)) {
+				Marche.SetActive (true);
+			} 
 
             //Tracer un RayCast pour déterminer l'endroit de la souris dans le jeu
             Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
