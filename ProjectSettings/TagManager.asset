@@ -9,6 +9,7 @@ TagManager:
   - ennemi
   - ennemiRange
   - Arme
+  - Porte
   layers:
   - Default
   - TransparentFX

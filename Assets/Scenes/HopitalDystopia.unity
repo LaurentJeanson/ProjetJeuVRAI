@@ -9861,7 +9861,7 @@ GameObject:
   - component: {fileID: 1551903513}
   m_Layer: 0
   m_Name: Porte
-  m_TagString: Untagged
+  m_TagString: Porte
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
