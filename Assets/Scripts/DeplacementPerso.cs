@@ -131,6 +131,6 @@ public class DeplacementPerso : MonoBehaviour
     //Charger scène de défaite
     void DefaiteJeu()
     {
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(10);
     }
 }

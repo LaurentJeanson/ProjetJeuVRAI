@@ -60,23 +60,24 @@ public class GestionPerso : MonoBehaviour
             viePerso.fillAmount = vieActuelle / vieTotale;
 
             //Si le joueur clique et le personnage peut tirer
-			if (Input.GetMouseButtonDown (0) && peutTirer) {
-				print ("TIR");
-				FusilSon.SetActive (true);
-				//Instantier une particule positionnée au fusil et tournée au même angle que le personnage
-				var clone = Instantiate (particuleTir);
-				clone.transform.position = fusil.transform.position;
-				clone.transform.localEulerAngles = transform.localEulerAngles;
-				//Démarrer l'animation de tir
-				anim.SetBool ("Tir", true);
-				//Activer la particule
-				clone.SetActive (true);
-				//Empêcher de tirer à nouveau pour un certain délai
-				peutTirer = false;
-				StartCoroutine ("AttenteTir");
-				//Détruire la particule après un certain temps
-				StartCoroutine (DetruireParticule (clone));
-			} 
+            if (Input.GetMouseButtonDown(0) && peutTirer)
+            {
+                print("TIR");
+                FusilSon.SetActive(true);
+                //Instantier une particule positionnée au fusil et tournée au même angle que le personnage
+                var clone = Instantiate(particuleTir);
+                clone.transform.position = fusil.transform.position;
+                clone.transform.localEulerAngles = transform.localEulerAngles;
+                //Démarrer l'animation de tir
+                anim.SetBool("Tir", true);
+                //Activer la particule
+                clone.SetActive(true);
+                //Empêcher de tirer à nouveau pour un certain délai
+                peutTirer = false;
+                StartCoroutine("AttenteTir");
+                //Détruire la particule après un certain temps
+                StartCoroutine(DetruireParticule(clone));
+            }
         }
     }
 

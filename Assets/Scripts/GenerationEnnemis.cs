@@ -47,7 +47,7 @@ public class GenerationEnnemis : MonoBehaviour
 
     private int randEnnemi;
 
-    public static int iNoVague = 0;
+    public static int iNoVague = 8;
     public int iNbEnnemisMorts;
     public bool bossMort = false;
 
