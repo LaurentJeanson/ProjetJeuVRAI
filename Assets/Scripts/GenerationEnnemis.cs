@@ -260,6 +260,6 @@ public class GenerationEnnemis : MonoBehaviour
     {
         Boss.transform.position = spawnBoss.transform.position;
         Boss.SetActive(true);
-        ProchaineVague(35, 7, 5, 1, 2.5f);
+        ProchaineVague(35, 3, 2, 0.2f, 0.3f);
     }
 }

@@ -38,6 +38,7 @@ public class GestionPerso : MonoBehaviour
 
     void Start ()
     {
+        DeplacementPerso.estMort = false;
         //Initializations
         vieActuelle = vieTotale;
         anim = GetComponent<Animator>();
