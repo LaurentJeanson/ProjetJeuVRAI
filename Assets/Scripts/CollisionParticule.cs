@@ -50,9 +50,18 @@ public class CollisionParticule : MonoBehaviour {
         //Si l'objet touché était un ennemi, le détruire aussi et arrêter son attaque
         if (other.gameObject.tag == "ennemi")
         {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            player.GetComponent<GestionPerso>().StopInvoke();
-            other.gameObject.GetComponent<Ennemis>().Touche();
+            if (other.gameObject.name == "Boss")
+            {
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                player.GetComponent<GestionPerso>().StopInvoke();
+                other.gameObject.GetComponent<Boss>().Touche();
+            }
+            else
+            {
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                player.GetComponent<GestionPerso>().StopInvoke();
+                other.gameObject.GetComponent<Ennemis>().Touche();
+            }
         }
         else if (other.gameObject.tag == "ennemiRange")
         {

@@ -3826,7 +3826,7 @@ Prefab:
     - target: {fileID: 114164558223631068, guid: b9fa87e814a83d141adb88cf7c5450ac,
         type: 2}
       propertyPath: vitesseTir
-      value: 1
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9fa87e814a83d141adb88cf7c5450ac, type: 2}
@@ -6998,7 +6998,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 408866932}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.64
+  m_Radius: 0.53
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -7023,7 +7023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laCible: {fileID: 54388453}
-  vie: 6
+  vie: 25
 --- !u!136 &408866936
 CapsuleCollider:
   m_ObjectHideFlags: 0
