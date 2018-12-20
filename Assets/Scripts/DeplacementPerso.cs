@@ -65,6 +65,8 @@ public class DeplacementPerso : MonoBehaviour
                 //Animation de marche
                 anim.SetBool("Marche", true);
                 anim.SetBool("Court", false);
+				Marche.SetActive (true);
+				CoursSon.SetActive (false);
             }
             //S'il court
             else if (rb.velocity.magnitude > 0 && court)
@@ -118,6 +120,13 @@ public class DeplacementPerso : MonoBehaviour
             DefaiteJeu();
         }
     }
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.tag == "Porte")
+		{
+			SceneManager.LoadScene("CineDysto");
+		}
+	}
 
     //Charger scène de défaite
     void DefaiteJeu()
