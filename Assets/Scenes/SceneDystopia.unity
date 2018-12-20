@@ -2981,6 +2981,11 @@ Prefab:
       propertyPath: GenerateurEnnemis
       value: 
       objectReference: {fileID: 2006486319}
+    - target: {fileID: 114684549640262136, guid: 5636aef1b9929d147a422d2cdcae30b5,
+        type: 2}
+      propertyPath: UIStatistique
+      value: 
+      objectReference: {fileID: 1641798406}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5636aef1b9929d147a422d2cdcae30b5, type: 2}
   m_IsPrefabAsset: 0
@@ -6258,6 +6263,11 @@ Prefab:
       propertyPath: GenerateurEnnemis
       value: 
       objectReference: {fileID: 2006486319}
+    - target: {fileID: 114421634883263368, guid: 20efb0d2f284dc6479d6f3bff2dd1a94,
+        type: 2}
+      propertyPath: UIStatistique
+      value: 
+      objectReference: {fileID: 1641798406}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20efb0d2f284dc6479d6f3bff2dd1a94, type: 2}
   m_IsPrefabAsset: 0
@@ -8617,7 +8627,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!195 &588073005
 NavMeshAgent:
@@ -10890,7 +10900,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!195 &760122270
 NavMeshAgent:
@@ -11316,7 +11326,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!136 &793910816
 CapsuleCollider:
@@ -17087,6 +17097,11 @@ Prefab:
       propertyPath: GenerateurEnnemis
       value: 
       objectReference: {fileID: 2006486319}
+    - target: {fileID: 114634639947670870, guid: 0dfd8506c20b8d347a93cf4a8c8de305,
+        type: 2}
+      propertyPath: UIStatistique
+      value: 
+      objectReference: {fileID: 1641798406}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dfd8506c20b8d347a93cf4a8c8de305, type: 2}
   m_IsPrefabAsset: 0
@@ -22154,7 +22169,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!195 &1502857166
 NavMeshAgent:
@@ -28301,7 +28316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1883469314
 Transform:
   m_ObjectHideFlags: 0
@@ -32616,7 +32631,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!195 &2138029625
 NavMeshAgent:

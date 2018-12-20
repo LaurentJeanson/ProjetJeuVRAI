@@ -15,12 +15,14 @@ public class EnnemiRange : MonoBehaviour
     //Cible à suivre
     public GameObject laCible;
 
-    public GameObject GenerateurEnnemis;
+    public static GameObject GenerateurEnnemis;
 
     public GameObject ParticuleEnnemi;
 
     public static int vieEnnemi;
     public int vie;
+
+    public GameObject UIStatistique;
 
     private bool peutTirer = true;
 
@@ -35,6 +37,7 @@ public class EnnemiRange : MonoBehaviour
 
     void Start()
     {
+        GenerateurEnnemis = GameObject.Find("Generateur_Ennemis");
         //Initialization
         navAgent = GetComponent<NavMeshAgent>();
         ennemiAnim = GetComponent<Animator>();
@@ -68,7 +71,7 @@ public class EnnemiRange : MonoBehaviour
         {
             GenerationEnnemis.iNoVague++;
 
-            StartCoroutine("AllerProchaineVague");
+            UIStatistique.SetActive(true);
         }
     }
 
@@ -85,48 +88,48 @@ public class EnnemiRange : MonoBehaviour
         peutTirer = true;
     }
 
-    void AllerProchaineVague()
+    public static void AllerProchaineVague()
     {
         switch (GenerationEnnemis.iNoVague)
         {
             case 2:
                 print("Vague No : " + GenerationEnnemis.iNoVague);
-                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(15, 3, 2, 1, 1);
+                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(15, 3, 2, 0.1f, 0.3f);
                 break;
             case 3:
                 print("Vague No : " + GenerationEnnemis.iNoVague);
-                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(20, 3, 2, 1, 1);
+                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(20, 3, 2, 0.2f, 0.4f);
                 break;
             case 4:
                 print("Vague No : " + GenerationEnnemis.iNoVague);
-                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(25, 3, 2, 1, 1);
+                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(20, 4, 2, 0.3f, 0.6f);
                 break;
             case 5:
                 print("Vague No : " + GenerationEnnemis.iNoVague);
-                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(30, 3, 2, 1, 1);
+                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(25, 4, 2, 0.4f, 0.8f);
                 break;
             case 6:
                 print("Vague No : " + GenerationEnnemis.iNoVague);
-                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(35, 3, 2, 1, 1);
+                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(25, 5, 3, 0.5f, 1);
                 break;
             case 7:
                 print("Vague No : " + GenerationEnnemis.iNoVague);
-                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(40, 3, 2, 1, 1);
+                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(30, 6, 2, 0.6f, 1.5f);
                 break;
             case 8:
                 print("Vague No : " + GenerationEnnemis.iNoVague);
-                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(45, 3, 2, 1, 1);
+                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(30, 6, 4, 0.7f, 1.7f);
                 break;
             case 9:
                 print("Vague No : " + GenerationEnnemis.iNoVague);
-                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(50, 3, 2, 1, 1);
+                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(35, 7, 2, 0.8f, 2);
                 break;
             case 10:
                 print("Vague No : " + GenerationEnnemis.iNoVague);
-                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(55, 3, 2, 1, 1);
+                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(35, 7, 5, 1, 2.5f);
                 break;
             default:
-                SceneManager.LoadScene(9);
+                SceneManager.LoadScene(8);
                 break;
         }
     }

@@ -68,7 +68,10 @@ public class Ennemis : MonoBehaviour
             GenerateurEnnemis.GetComponent<GenerationEnnemis>().iNbEnnemisMorts++;
         }
 
-        if (GenerateurEnnemis.GetComponent<GenerationEnnemis>().iNbEnnemisMorts >= GenerateurEnnemis.GetComponent<GenerationEnnemis>().nbEnnemisTotal)
+        print("MORTS" + GenerateurEnnemis.GetComponent<GenerationEnnemis>().iNbEnnemisMorts);
+        print("MAX" + GenerateurEnnemis.GetComponent<GenerationEnnemis>().nbEnnemisMax);
+
+        if (GenerateurEnnemis.GetComponent<GenerationEnnemis>().iNbEnnemisMorts >= GenerateurEnnemis.GetComponent<GenerationEnnemis>().nbEnnemisMax)
         {
             GenerationEnnemis.iNoVague++;
 
