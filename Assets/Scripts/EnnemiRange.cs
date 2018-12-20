@@ -91,39 +91,39 @@ public class EnnemiRange : MonoBehaviour
         {
             case 2:
                 print("Vague No : " + GenerationEnnemis.iNoVague);
-                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(15, 3, 2);
+                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(15, 3, 2, 1, 1);
                 break;
             case 3:
                 print("Vague No : " + GenerationEnnemis.iNoVague);
-                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(20, 3, 2);
+                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(20, 3, 2, 1, 1);
                 break;
             case 4:
                 print("Vague No : " + GenerationEnnemis.iNoVague);
-                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(25, 3, 2);
+                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(25, 3, 2, 1, 1);
                 break;
             case 5:
                 print("Vague No : " + GenerationEnnemis.iNoVague);
-                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(30, 3, 2);
+                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(30, 3, 2, 1, 1);
                 break;
             case 6:
                 print("Vague No : " + GenerationEnnemis.iNoVague);
-                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(35, 3, 2);
+                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(35, 3, 2, 1, 1);
                 break;
             case 7:
                 print("Vague No : " + GenerationEnnemis.iNoVague);
-                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(40, 3, 2);
+                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(40, 3, 2, 1, 1);
                 break;
             case 8:
                 print("Vague No : " + GenerationEnnemis.iNoVague);
-                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(45, 3, 2);
+                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(45, 3, 2, 1, 1);
                 break;
             case 9:
                 print("Vague No : " + GenerationEnnemis.iNoVague);
-                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(50, 3, 2);
+                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(50, 3, 2, 1, 1);
                 break;
             case 10:
                 print("Vague No : " + GenerationEnnemis.iNoVague);
-                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(55, 3, 2);
+                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(55, 3, 2, 1, 1);
                 break;
             default:
                 SceneManager.LoadScene(9);
