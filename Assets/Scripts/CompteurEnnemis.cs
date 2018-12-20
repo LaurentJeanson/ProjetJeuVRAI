@@ -41,7 +41,7 @@ public class CompteurEnnemis : MonoBehaviour {
         } else
             // Nombre d'ennemis total après que la première vague soit terminée
             // Nombre d'ennemis maximum devant être produit - Nombre d'ennemis tuer par le joueur
-            txtCompteur.text = "Ennemis restants: " + ((10 + GenerateurEnnemis.GetComponent<GenerationEnnemis>().nbEnnemisMax) - GenerateurEnnemis.GetComponent<GenerationEnnemis>().iNbEnnemisMorts);
+            txtCompteur.text = "Ennemis restants: " + ((GenerateurEnnemis.GetComponent<GenerationEnnemis>().nbEnnemisMax) - GenerateurEnnemis.GetComponent<GenerationEnnemis>().iNbEnnemisMorts);
 
 
 

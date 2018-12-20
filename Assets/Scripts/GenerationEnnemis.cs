@@ -6,6 +6,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GenerationEnnemis : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class GenerationEnnemis : MonoBehaviour
     public GameObject EnnemiMauve;
     public GameObject EnnemiOrange;
     public GameObject EnnemiRouge;
+
+    public GameObject Boss;
 
     public GameObject ChampiBleu;
     public GameObject ChampiRouge;
@@ -29,6 +32,7 @@ public class GenerationEnnemis : MonoBehaviour
     public GameObject spawn4;
     public GameObject spawn5;
     public GameObject spawn6;
+    public GameObject spawnBoss;
 
     //Nombres pour déterminer le nombre d'ennemis total ainsi que la vitesse à laquelle ils sont créés
     public int nbEnnemisMax;
@@ -45,6 +49,7 @@ public class GenerationEnnemis : MonoBehaviour
 
     public static int iNoVague = 0;
     public int iNbEnnemisMorts;
+    public bool bossMort = false;
 
 
     // Use this for initialization
@@ -56,6 +61,14 @@ public class GenerationEnnemis : MonoBehaviour
         //Instantier des ennemis
         GenererFailles();
         InvokeRepeating("CreationEnnemiSpawn", 1, spawnRate);
+    }
+
+    private void Update()
+    {
+        if (bossMort && iNbEnnemisMorts >= nbEnnemisMax)
+        {
+            SceneManager.LoadScene(8);
+        }
     }
 
     void GenererFailles()
@@ -213,6 +226,7 @@ public class GenerationEnnemis : MonoBehaviour
     public void ProchaineVague(int nbEnnemisACreer, int vieEnnemisProche, int vieEnnemisRange, float degatEnnemis, float degatEnnemisRange)
     {
         nbEnnemisTotal = 0;
+        iNbEnnemisMorts = 0;
         nbEnnemisMax = nbEnnemisACreer;
         SetVieEnnemiProche(vieEnnemisProche);
         SetDegatEnnemiProche(degatEnnemis);
@@ -240,5 +254,12 @@ public class GenerationEnnemis : MonoBehaviour
     public static void SetDegatEnnemiRange(float degats)
     {
         EnnemiRange.degatEnnemi = degats;
+    }
+
+    public void GererBoss()
+    {
+        Boss.transform.position = spawnBoss.transform.position;
+        Boss.SetActive(true);
+        ProchaineVague(35, 7, 5, 1, 2.5f);
     }
 }

@@ -23,6 +23,8 @@ public class GestionFailles : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 other.gameObject.GetComponent<GestionPerso>().vieActuelle += 1;
+                textFaille.SetActive(false);
+                panelFaille.SetActive(false);
                 Destroy(gameObject);
             }
         }

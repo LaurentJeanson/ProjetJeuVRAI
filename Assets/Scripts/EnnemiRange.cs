@@ -51,7 +51,6 @@ public class EnnemiRange : MonoBehaviour
 
         if (navAgent.remainingDistance <= 30 && navAgent.remainingDistance > 0 && peutTirer == true)
         {
-            print("POW");
             peutTirer = false;
             StartCoroutine("TirEnnemi");
         }
@@ -77,7 +76,6 @@ public class EnnemiRange : MonoBehaviour
 
     IEnumerator TirEnnemi()
     {
-        print("POW2");
         var clone = Instantiate(ParticuleEnnemi);
         clone.transform.position = ParticuleEnnemi.transform.position + (ParticuleEnnemi.transform.forward * 2);
         clone.transform.localEulerAngles = transform.localEulerAngles;
@@ -126,10 +124,7 @@ public class EnnemiRange : MonoBehaviour
                 break;
             case 10:
                 print("Vague No : " + GenerationEnnemis.iNoVague);
-                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(35, 7, 5, 1, 2.5f);
-                break;
-            default:
-                SceneManager.LoadScene(8);
+                GenerateurEnnemis.GetComponent<GenerationEnnemis>().GererBoss();
                 break;
         }
     }

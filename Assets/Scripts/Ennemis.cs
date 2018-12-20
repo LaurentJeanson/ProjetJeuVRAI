@@ -68,10 +68,7 @@ public class Ennemis : MonoBehaviour
             GenerateurEnnemis.GetComponent<GenerationEnnemis>().iNbEnnemisMorts++;
         }
 
-        print("MORTS" + GenerateurEnnemis.GetComponent<GenerationEnnemis>().iNbEnnemisMorts);
-        print("MAX" + GenerateurEnnemis.GetComponent<GenerationEnnemis>().nbEnnemisMax);
-
-        if (GenerateurEnnemis.GetComponent<GenerationEnnemis>().iNbEnnemisMorts >= GenerateurEnnemis.GetComponent<GenerationEnnemis>().nbEnnemisMax)
+        if (GenerateurEnnemis.GetComponent<GenerationEnnemis>().iNbEnnemisMorts >= GenerateurEnnemis.GetComponent<GenerationEnnemis>().nbEnnemisMax && GenerationEnnemis.iNoVague < 10)
         {
             GenerationEnnemis.iNoVague++;
 
@@ -117,10 +114,7 @@ public class Ennemis : MonoBehaviour
                 break;
             case 10:
                 print("Vague No : " + GenerationEnnemis.iNoVague);
-                GenerateurEnnemis.GetComponent<GenerationEnnemis>().ProchaineVague(35, 7, 5, 1, 2.5f);
-                break;
-            default:
-                SceneManager.LoadScene(9);
+                GenerateurEnnemis.GetComponent<GenerationEnnemis>().GererBoss();
                 break;
         }
     }
