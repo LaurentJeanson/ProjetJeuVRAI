@@ -120,6 +120,13 @@ public class DeplacementPerso : MonoBehaviour
             DefaiteJeu();
         }
     }
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.tag == "Porte")
+		{
+			SceneManager.LoadScene("CineDysto");
+		}
+	}
 
     //Charger scène de défaite
     void DefaiteJeu()
