@@ -45,4 +45,9 @@ public class ChangementSceneMenu : MonoBehaviour {
     {
         SceneManager.LoadScene("SceneCinematiqueDebut");
     }
+
+    public void AllerCredit()
+    {
+        SceneManager.LoadScene("SceneCredit");
+    }
 }
