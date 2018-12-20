@@ -20,6 +20,8 @@ public class GenerationEnnemis : MonoBehaviour
     public GameObject ChampiRouge;
     public GameObject ChampiVert;
 
+    public GameObject faille;
+
     //Game objects pour stocker les points d'apparition des ennemis
     public GameObject spawn1;
     public GameObject spawn2;
@@ -58,6 +60,33 @@ public class GenerationEnnemis : MonoBehaviour
     //Créer des ennemis
     void CreationEnnemiSpawn()
     {
+        for (int i = 1; i <= 6; i++)
+        {
+            var cloneFaille = Instantiate(faille);
+            switch (i)
+            {
+                case 1:
+                    cloneFaille.transform.position = spawn1.transform.position;
+                    break;
+                case 2:
+                    cloneFaille.transform.position = spawn2.transform.position;
+                    break;
+                case 3:
+                    cloneFaille.transform.position = spawn3.transform.position;
+                    break;
+                case 4:
+                    cloneFaille.transform.position = spawn4.transform.position;
+                    break;
+                case 5:
+                    cloneFaille.transform.position = spawn5.transform.position;
+                    break;
+                case 6:
+                    cloneFaille.transform.position = spawn6.transform.position;
+                    break;
+            }
+            cloneFaille.SetActive(true);
+        }
+
         var ennemi = "";
         nbEnnemisRangeTotal = nbEnnemisMax * 2 / 5;
         nbEnnemisProcheTotal = nbEnnemisMax - nbEnnemisRangeTotal;
