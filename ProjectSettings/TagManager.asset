@@ -10,6 +10,7 @@ TagManager:
   - ennemiRange
   - Arme
   - Porte
+  - Plancher
   layers:
   - Default
   - TransparentFX
