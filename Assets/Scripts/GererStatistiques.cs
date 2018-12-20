@@ -21,6 +21,7 @@ public class GererStatistiques : MonoBehaviour {
     public void AugmenterVie()
     {
         perso.GetComponent<GestionPerso>().vieTotale += 0.5f;
+        perso.GetComponent<GestionPerso>().vieActuelle = perso.GetComponent<GestionPerso>().vieTotale;
         gameObject.SetActive(false);
         Ennemis.AllerProchaineVague();
     }

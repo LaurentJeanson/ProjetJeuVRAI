@@ -2440,6 +2440,11 @@ Prefab:
       propertyPath: spawnBoss
       value: 
       objectReference: {fileID: 842319360}
+    - target: {fileID: 114077463582620248, guid: 8108957f766e2ad4d819c8c829a0803e,
+        type: 2}
+      propertyPath: nbEnnemisMax
+      value: 35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8108957f766e2ad4d819c8c829a0803e, type: 2}
   m_IsPrefabAsset: 0

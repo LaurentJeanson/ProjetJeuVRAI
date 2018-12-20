@@ -123,6 +123,7 @@ public class GestionPerso : MonoBehaviour
         {
             //Personnage est mort
             DeplacementPerso.estMort = true;
+            vieActuelle = 1;
         }
         //Si l'ennemi quitte la zone du personnage, on arrête d'attaquer
         if (!Ennemis.touchePerso)
