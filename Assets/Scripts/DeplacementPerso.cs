@@ -80,7 +80,7 @@ public class DeplacementPerso : MonoBehaviour
             {
                 anim.SetBool("Marche", false);
                 anim.SetBool("Court", false);
-				Marche.SetActive (false);
+				Marche.SetActive(false);
 				CoursSon.SetActive (false);
             }
 			if (Input.GetKeyDown (KeyCode.A) || Input.GetKeyDown (KeyCode.S) || Input.GetKeyDown (KeyCode.D) || Input.GetKeyDown (KeyCode.W)) {

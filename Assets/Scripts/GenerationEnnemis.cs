@@ -54,11 +54,11 @@ public class GenerationEnnemis : MonoBehaviour
         SetVieEnnemiProche(2);
         SetVieEnnemiRange(1);
         //Instantier des ennemis
+        GenererFailles();
         InvokeRepeating("CreationEnnemiSpawn", 1, spawnRate);
     }
 
-    //Créer des ennemis
-    void CreationEnnemiSpawn()
+    void GenererFailles()
     {
         for (int i = 1; i <= 6; i++)
         {
@@ -86,7 +86,11 @@ public class GenerationEnnemis : MonoBehaviour
             }
             cloneFaille.SetActive(true);
         }
+    }
 
+    //Créer des ennemis
+    void CreationEnnemiSpawn()
+    {
         var ennemi = "";
         nbEnnemisRangeTotal = nbEnnemisMax * 2 / 5;
         nbEnnemisProcheTotal = nbEnnemisMax - nbEnnemisRangeTotal;
@@ -214,6 +218,7 @@ public class GenerationEnnemis : MonoBehaviour
         SetDegatEnnemiProche(degatEnnemis);
         SetVieEnnemiRange(vieEnnemisRange);
         SetDegatEnnemiRange(degatEnnemisRange);
+        GenererFailles();
         InvokeRepeating("CreationEnnemiSpawn", 1, spawnRate);
     }
 
