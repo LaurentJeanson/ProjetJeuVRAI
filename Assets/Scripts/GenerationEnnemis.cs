@@ -1,8 +1,10 @@
 ﻿//////////////////////////////////////////
 ////Philippe Thibeault////////////////////
 //////////////////////////////////////////
-////Dernière modification : 2018-11-14////
+////Dernière modification : 2018-12-20////
 //////////////////////////////////////////
+/*Script qui gère les vagues et la création
+des ennemis ainsi que des failles*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,12 +19,15 @@ public class GenerationEnnemis : MonoBehaviour
     public GameObject EnnemiOrange;
     public GameObject EnnemiRouge;
 
+    //Game object pour stocker le boss
     public GameObject Boss;
 
+    //Game objects pour stocker les ennemis à distance
     public GameObject ChampiBleu;
     public GameObject ChampiRouge;
     public GameObject ChampiVert;
 
+    //Game object pour stocker la faille à instancier
     public GameObject faille;
 
     //Game objects pour stocker les points d'apparition des ennemis
@@ -51,8 +56,6 @@ public class GenerationEnnemis : MonoBehaviour
     public int iNbEnnemisMorts;
     public bool bossMort = false;
 
-
-    // Use this for initialization
     void Start()
     {
         iNoVague++;
@@ -65,12 +68,14 @@ public class GenerationEnnemis : MonoBehaviour
 
     private void Update()
     {
+        //Si le boss et tous les ennemis sont morts 
         if (bossMort && iNbEnnemisMorts >= nbEnnemisMax)
         {
             SceneManager.LoadScene(8);
         }
     }
 
+    //Instancier une faille à chaque endroit où il y a des ennemis
     void GenererFailles()
     {
         for (int i = 1; i <= 6; i++)
@@ -223,6 +228,7 @@ public class GenerationEnnemis : MonoBehaviour
         }
     }
 
+    //Fonction qui génère la prochaine vague d'ennemis selon les paramètres donnés
     public void ProchaineVague(int nbEnnemisACreer, int vieEnnemisProche, int vieEnnemisRange, float degatEnnemis, float degatEnnemisRange)
     {
         nbEnnemisTotal = 0;

@@ -1,8 +1,12 @@
 ﻿//////////////////////////////////////////
 ////Philippe Thibeault////////////////////
 //////////////////////////////////////////
-////Dernière modification : 2018-11-14////
+////Dernière modification : 2018-12-20////
 //////////////////////////////////////////
+/*Script qui gère la collision la collision
+entre les particules et les ennemis. Ce script
+détecte le lieu de collision et y génère une
+nouvelle particule.*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +22,6 @@ public class CollisionParticule : MonoBehaviour {
     //Stocker une position
     private Vector3 pos;
 
-    // Use this for initialization
     void Start () {
         //Créer une nouvelle liste de collisions
         collisionEvents = new List<ParticleCollisionEvent>();

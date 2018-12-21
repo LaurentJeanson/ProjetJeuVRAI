@@ -1,8 +1,13 @@
 ﻿//////////////////////////////////////////
 ////Philippe Thibeault////////////////////
 //////////////////////////////////////////
-////Dernière modification : 2018-11-14////
+////Dernière modification : 2018-12-20////
 //////////////////////////////////////////
+/*Script qui gère toutes les interactions du personnage, soit:
+    -La vie
+    -Le tir
+    -La collision avec les ennemis
+    */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,7 +44,7 @@ public class GestionPerso : MonoBehaviour
     void Start ()
     {
         DeplacementPerso.estMort = false;
-        //Initializations
+
         vieActuelle = vieTotale;
         anim = GetComponent<Animator>();
 
@@ -51,7 +56,6 @@ public class GestionPerso : MonoBehaviour
         }
     }
 	
-	// Update is called once per frame
 	void Update ()
     {
         //Si le personnage n'est pas mort
@@ -63,7 +67,6 @@ public class GestionPerso : MonoBehaviour
             //Si le joueur clique et le personnage peut tirer
             if (Input.GetMouseButtonDown(0) && peutTirer)
             {
-                print("TIR");
                 FusilSon.SetActive(true);
                 //Instantier une particule positionnée au fusil et tournée au même angle que le personnage
                 var clone = Instantiate(particuleTir);
@@ -148,6 +151,7 @@ public class GestionPerso : MonoBehaviour
         Destroy(particule);
     }
 
+    //Arrêter l'attaque de l'ennemi
     public void StopInvoke()
     {
         CancelInvoke("AttaquePerso");

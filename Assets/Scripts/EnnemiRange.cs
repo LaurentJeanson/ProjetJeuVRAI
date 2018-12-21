@@ -1,8 +1,10 @@
 ﻿//////////////////////////////////////////
 ////Philippe Thibeault////////////////////
 //////////////////////////////////////////
-////Dernière modification : 2018-11-14////
+////Dernière modification : 2018-12-20////
 //////////////////////////////////////////
+/*Script qui gère le déplacement et les
+interactions des ennemis à distance*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.AI;
@@ -15,15 +17,20 @@ public class EnnemiRange : MonoBehaviour
     //Cible à suivre
     public GameObject laCible;
 
+    //Objet qui génère les ennemis
     public static GameObject GenerateurEnnemis;
 
+    //Particule de tir de L'ennemi
     public GameObject ParticuleEnnemi;
 
+    //Variables pour stocker la vie de L'ennemi
     public static int vieEnnemi;
     public int vie;
 
+    //GameObject pour le UI de l'amélioration des statistiques
     public GameObject UIStatistique;
 
+    //Booléenne déterminant si l'ennemi peut tirer
     private bool peutTirer = true;
 
     //NavMesh et Animator de l'ennemi
@@ -38,7 +45,7 @@ public class EnnemiRange : MonoBehaviour
     void Start()
     {
         GenerateurEnnemis = GameObject.Find("Generateur_Ennemis");
-        //Initialization
+
         navAgent = GetComponent<NavMeshAgent>();
         ennemiAnim = GetComponent<Animator>();
         vie = InitializeVie();
@@ -49,6 +56,7 @@ public class EnnemiRange : MonoBehaviour
         //On dit à l'ennemi de se diriger vers le personnage à une certaine vitesse
         navAgent.SetDestination(laCible.transform.position);
 
+        //À une certaine distance, l'ennemi arrête et tire sur le personnage
         if (navAgent.remainingDistance <= 30 && navAgent.remainingDistance > 0 && peutTirer == true)
         {
             peutTirer = false;
@@ -56,16 +64,19 @@ public class EnnemiRange : MonoBehaviour
         }
     }
 
-    //Si l'ennemi est touché par une balle de fusil, on le détruit
+    //Si l'ennemi est touché par une balle de fusil, on le diminue sa vie
     public void Touche()
     {
         vie--;
+
+        //Si la vie est 0, on le détruit et on recalcule le nombre d'ennemis morts
         if (vie <= 0)
         {
             Destroy(gameObject);
             GenerateurEnnemis.GetComponent<GenerationEnnemis>().iNbEnnemisMorts++;
         }
 
+        //Si tous les ennemis sont morts, on passe à la prochaine vague
         if (GenerateurEnnemis.GetComponent<GenerationEnnemis>().iNbEnnemisMorts >= GenerateurEnnemis.GetComponent<GenerationEnnemis>().nbEnnemisTotal)
         {
             GenerationEnnemis.iNoVague++;
@@ -74,6 +85,7 @@ public class EnnemiRange : MonoBehaviour
         }
     }
 
+    //L'ennemi tire une nouvelle particule qui se dirige vers le personnage
     IEnumerator TirEnnemi()
     {
         var clone = Instantiate(ParticuleEnnemi);
@@ -86,6 +98,7 @@ public class EnnemiRange : MonoBehaviour
         peutTirer = true;
     }
 
+    //Passer à la prochaine vague et déterminer le nombre d'ennemis de chaque sorte, leur vie et leurs dégâts
     public static void AllerProchaineVague()
     {
         switch (GenerationEnnemis.iNoVague)

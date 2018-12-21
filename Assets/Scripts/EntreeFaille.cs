@@ -1,8 +1,10 @@
 ﻿//////////////////////////////////////////
 ////Philippe Thibeault////////////////////
 //////////////////////////////////////////
-////Dernière modification : 2018-11-14////
+////Dernière modification : 2018-12-20////
 //////////////////////////////////////////
+/*Script qui gère la cinématique de la caméra
+qui entre dans la faille dans l'hôpital*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

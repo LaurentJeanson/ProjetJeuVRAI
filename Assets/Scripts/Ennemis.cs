@@ -2,8 +2,10 @@
 ////Carolanne Legault/////////////////////
 ////Philippe Thibeault////////////////////
 //////////////////////////////////////////
-////Dernière modification : 2018-11-14////
+////Dernière modification : 2018-12-20////
 //////////////////////////////////////////
+/*Script qui gère le déplacement et les
+interactions des ennemis à corps à corps*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.AI;
@@ -16,11 +18,14 @@ public class Ennemis : MonoBehaviour
     //Cible à suivre
     public GameObject laCible;
 
+    //Objet qui génère les ennemis
     public static GameObject GenerateurEnnemis;
 
+    //Valeurs pour stocker la vie de l'ennemi
     public static int vieEnnemi;
     public float vie;
 
+    //GameObject pour stocker le UI des statistiques
     public GameObject UIStatistique;
 
     //NavMesh et Animator de l'ennemi
@@ -36,7 +41,7 @@ public class Ennemis : MonoBehaviour
 	void Start ()
     {
         GenerateurEnnemis = GameObject.Find("Generateur_Ennemis");
-        //Initialization
+
         navAgent = GetComponent<NavMeshAgent>();
         ennemiAnim = GetComponent<Animator>();
         vie = InitializeVie();
@@ -50,24 +55,21 @@ public class Ennemis : MonoBehaviour
         }
         //On dit à l'ennemi de se diriger vers le personnage à une certaine vitesse
         navAgent.SetDestination(laCible.transform.position);
-
-        //Animation de l'ennemi s'il touche le personnage
-        /***NON FONCTIONNEL***/
-        //ennemiAnim.SetBool("touchePerso", touchePerso);
 	}
 
-    //Si l'ennemi est touché par une balle de fusil, on le détruit
-    /***À TRAVAILLER SI ON VEUT QUE L'ENEMI AILLE DE LA VIE***/
+    //Si l'ennemi est touché par une balle de fusil, on diminue sa vie
     public void Touche()
     {
         vie -= laCible.GetComponent<GestionPerso>().degats;
 
+        //Si sa vie atteint 0, on le détruit et on calcule le nombre d'ennemis morts
         if (vie <= 0)
         {
             Destroy(gameObject);
             GenerateurEnnemis.GetComponent<GenerationEnnemis>().iNbEnnemisMorts++;
         }
 
+        //Si tous les ennemis sont morts, on passe à la prochaine vague
         if (GenerateurEnnemis.GetComponent<GenerationEnnemis>().iNbEnnemisMorts >= GenerateurEnnemis.GetComponent<GenerationEnnemis>().nbEnnemisMax && GenerationEnnemis.iNoVague < 10)
         {
             GenerationEnnemis.iNoVague++;
@@ -76,6 +78,7 @@ public class Ennemis : MonoBehaviour
         }
     }
 
+    //Script pour passer à la prochaine vague et déterminer le nombre de chaque ennemi, leur vie et leurs dégâts
     public static void AllerProchaineVague()
     {
         switch (GenerationEnnemis.iNoVague)

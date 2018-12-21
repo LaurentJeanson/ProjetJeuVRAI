@@ -1,8 +1,16 @@
 ﻿//////////////////////////////////////////
 ////Philippe Thibeault////////////////////
 //////////////////////////////////////////
-////Dernière modification : 2018-11-14////
+////Dernière modification : 2018-12-20////
 //////////////////////////////////////////
+/*Script qui gère les déplacements du personnage,
+ses animations de déplacement et son orientation*/
+
+
+/***AJOUT DE LAURENT JEANSON***/
+/*Gérer les sons de déplacement
+du personnage*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +21,7 @@ public class DeplacementPerso : MonoBehaviour
     //Rigidbody et Animator du personnage
     private Rigidbody rb;
     private Animator anim;
+    //Sons de déplacement du personnage
 	public GameObject Marche;
 	public GameObject CoursSon;
     //Déterminer si le personnage court
@@ -26,7 +35,6 @@ public class DeplacementPerso : MonoBehaviour
 
     void Start()
     {
-        //Initialization
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
     }
@@ -40,7 +48,7 @@ public class DeplacementPerso : MonoBehaviour
             float deplacementHorizontal = Input.GetAxis("Horizontal");
             float deplacementVertical = Input.GetAxis("Vertical");
 
-            //D/terminer les vitesses du personnage
+            //Déterminer les vitesses du personnage
             float vitesseHorizontal = -deplacementVertical * vitesseDeplacement;
             float vitesseVertical = deplacementHorizontal * vitesseDeplacement;
 
@@ -85,6 +93,7 @@ public class DeplacementPerso : MonoBehaviour
 				Marche.SetActive(false);
 				CoursSon.SetActive (false);
             }
+            //Si le personnage bouge avec les touuches WASD, jouer le son
 			if (Input.GetKeyDown (KeyCode.A) || Input.GetKeyDown (KeyCode.S) || Input.GetKeyDown (KeyCode.D) || Input.GetKeyDown (KeyCode.W)) {
 				Marche.SetActive (true);
 			} 
@@ -105,7 +114,6 @@ public class DeplacementPerso : MonoBehaviour
             RaycastHit hit;
 
             //Tracer un RayCast vers le bas en partant du personnage pour détecter s'il décolle du sol et, si oui, le faire descendre
-            /***À AMÉLIORER***/
             if (Physics.Raycast(gameObject.transform.position, Vector3.down, out hit))
             {
                 if (hit.distance > 1)
@@ -120,6 +128,9 @@ public class DeplacementPerso : MonoBehaviour
             DefaiteJeu();
         }
     }
+
+    /***AJOUT DE LAURENT JEANSON***/
+    //Trigger utilisé pour lancer la cinématique lorsqu'on sort de l'hôpital
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.tag == "Porte")
@@ -128,7 +139,7 @@ public class DeplacementPerso : MonoBehaviour
 		}
 	}
 
-    //Charger scène de défaite
+    //Charger scène de défaite et réinitialisé la vie du personnage
     void DefaiteJeu()
     {
         gameObject.GetComponent<GestionPerso>().vieActuelle = 1;

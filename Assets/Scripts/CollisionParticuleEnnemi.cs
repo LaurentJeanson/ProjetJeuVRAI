@@ -1,8 +1,12 @@
 ﻿//////////////////////////////////////////
 ////Philippe Thibeault////////////////////
 //////////////////////////////////////////
-////Dernière modification : 2018-11-14////
+////Dernière modification : 2018-12-20////
 //////////////////////////////////////////
+/*Script qui gère la collision la collision
+entre les particules des ennemis à distance
+et le perso. Ce script détecte le lieu de
+collision et y génère une nouvelle particule.*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +22,6 @@ public class CollisionParticuleEnnemi : MonoBehaviour {
     //Stocker une position
     private Vector3 pos;
 
-    // Use this for initialization
     void Start () {
         //Créer une nouvelle liste de collisions
         collisionEvents = new List<ParticleCollisionEvent>();
@@ -44,7 +47,6 @@ public class CollisionParticuleEnnemi : MonoBehaviour {
             other.gameObject.GetComponent<GestionPerso>().vieActuelle -= 0.1f;
         }
 
-        print("TOUCHE");
         var clone = Instantiate(particuleHit);
         clone.transform.position = pos;
         clone.SetActive(true);
