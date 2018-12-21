@@ -7,12 +7,12 @@ using UnityEngine.SceneManagement;
 
 public class FailleEntreHopital : MonoBehaviour {
 	[SerializeField]private int scene;
-	// Use this for initialization
+
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
 		
 	}

@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Script créé par Laurent Jeanson 
+//Il est utilisé pour charger la scène Dystopia lorsque le joueur touche la porte
+
 public class GestionScenePorte : MonoBehaviour {
 	[SerializeField]private int scene; //Scène à charger
-	// Use this for initialization
+	
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
 		
 	}

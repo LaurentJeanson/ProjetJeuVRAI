@@ -14,12 +14,12 @@ public class GestionEventHopital : MonoBehaviour {
 	// GameObject des objets
 	public GameObject Personnage;
 	public GameObject GestionEventHopitalObjet;
-	// Use this for initialization
+
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
 		
 	}

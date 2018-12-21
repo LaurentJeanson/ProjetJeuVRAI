@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Scripte créé par Laurent Jeanson
-
+//Utilisé lorsque le joueur touche l'arme, il peut tiré et on voit l'arme dans sa main mais pas lui à terre
 public class ScriptPrendreArme : MonoBehaviour {
 	// GameObject des object
     public GameObject FusilDeco;
